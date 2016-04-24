@@ -1,0 +1,39 @@
+<ion-view cache-view="false" view-title="{{data.lists[data.index].title}}">
+  <ion-content>
+    <div class="list" ng-show="data.showAdd">
+      <div class="item item-input-inset">
+        <label class="item item-input-wrapper">
+          <input type="text" placeholder="Task" ng-model="data.newTask">
+        </label>
+        
+        <button class="button button-small button-positive" ng-click="addNewTask()">Add</button>
+      </div>
+    </div>
+      
+    <!-- this message shows when there is no tasks -->
+    <h3 class="error-message" ng-show="isEmpty()">Empty!</h3>
+      
+    <!-- i used this code for the checkbox items from-->
+    <!--https://forum.ionicframework.com/t/ion-item-with-checkbox-and-icon-on-item-icon-right-icons-in-ion-option/5234/3 -->
+    <ion-list>
+      <ion-item class="item-icon-right" ng-repeat="task in data.lists[data.index].tasks">
+        <div class="item-checkbox">
+          <label class="checkbox">
+            <input type="checkbox" ng-model="task.completed" ng-change="save()">
+          </label>
+          
+          <span>{{task.title}}</span>
+        </div>
+        
+        <!-- this is the delete button -->
+        <ion-option-button class="button-assertive ion-trash-b" ng-click="deleteTask($index)">
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+    
+  <div class="fixed-outside">
+    <a class="button button-circle button-positive icon ion-plus" href="#/app/home/newTask">
+    </a>
+  </div>
+</ion-view>

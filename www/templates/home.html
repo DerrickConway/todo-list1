@@ -1,0 +1,21 @@
+<ion-view view-title="Home">
+
+  <ion-content>
+    <h3 class="error-message" ng-show="isEmpty()">No lists!</h3>
+        
+    <ion-list>
+      <ion-item ng-repeat="list in data.lists" menu-close ng-click="chooseList($index)" href="#/app/home/list">
+        {{list.title}}
+          
+        <!-- this is the delete button -->
+        <ion-option-button class="button-assertive ion-trash-b" ng-click="deleteList($index)">
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+    
+  <div class="fixed-outside">
+    <a class="button button-circle button-positive icon ion-plus" href="#/app/home/newList">
+    </a>
+  </div>
+</ion-view>

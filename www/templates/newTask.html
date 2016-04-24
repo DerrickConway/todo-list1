@@ -1,0 +1,33 @@
+<ion-view view-title="New Task">
+  <ion-content>
+    <div class="list list-inset">
+      
+      <label class="item item-input">
+        <input type="text" placeholder="Task Title" ng-model="data.title">
+      </label>
+    
+      <!-- Label input -->
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="+ Add Label" ng-model="data.label">
+        </label>
+        
+        <button class="button button-small ion-plus" ng-click="addNewLabel()">
+        </button>
+      </div>
+      
+      <!-- this shows message if label is not added to a task-->
+      <h3 class="item error-message" ng-show="isEmpty()">No labels!</h3>
+        
+      <!-- show label -->
+      <label class="item" ng-show="!isEmpty()">
+        {{formattedLabels()}}
+      </label>
+      
+      <!-- Create task button -->
+      <a class="item button button-full button-positive" href="#/app/home/list" ng-click="addNewTask()"><!--NewTAsk-->
+        Add Task
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
