@@ -1,8 +1,8 @@
 # todo-list1
-I have created a to do list app created with Ionic
+I have desiged a to do list app using with Ionic
 
 -----------------Purpose-------------------
-I desiged this app to make schedules create multiple lists and create tasks
+I desiged this app to make schedules to create lists and create tasks
 
 ----------------Views----------------
 there are two app tabs that are home and search. In the home tab the user can add and delete lists and tasks.
